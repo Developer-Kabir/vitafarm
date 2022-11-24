@@ -12,3 +12,19 @@
 .navbar{
   max-height: 80px;
 }
+
+
+.p-title{
+  background-color: greenyellow;
+}
+.p-title2{
+  background-color: rgb(238, 250, 64);
+}
+
+.strick-title{
+  color: #f82727;
+}
+
+.pp{
+  color: green;
+}
