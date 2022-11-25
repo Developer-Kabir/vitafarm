@@ -11,7 +11,7 @@ const Moringa = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://vitfarm-backend.vercel.app/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

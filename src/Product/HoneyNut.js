@@ -9,7 +9,7 @@ const HoneyNut = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://vitfarm-backend.vercel.app/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,7 +41,8 @@ const HoneyNut = () => {
                     <h1 className='text-3xl pp font-bold p-1'>বর্তমান মূল্য -- ১১০০ টাকা</h1>
                     <h1 className='text-3xl pp font-bold p-4'>সারাদেশে ডেলিভারি চার্জ ফ্রি</h1>
                 </div>
-                <div className="grid card p-title2 mt-5 rounded-box place-items-center"><h1 className='text-3xl font-bold p-5'>অর্ডার করতে নিচে চলে যান</h1></div>
+                <div className="grid card p-title2 mt-5 rounded-box place-items-center"><h1 className='text-3xl font-bold p-5'>
+                    <a href="#orderActive">অর্ডার করতে নিচে চলে যান</a></h1></div>
                 <div className="hero min-h-screen bg-base-200">
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <img src="https://i.ibb.co/jDpJBkQ/Untitled-design-10.png" alt='' className="max-w-md rounded-2xl shadow-2xl" />
@@ -81,7 +82,7 @@ const HoneyNut = () => {
             <div className="flex my-10 flex-col w-full ">
 
 
-                <div className="card w-full bg-base-100 my-10" style={{ width: '90%', margin: 'auto', border: '1px solid #ddd' }}>
+                <div id='orderActive' className="card w-full bg-base-100 my-10" style={{ width: '90%', margin: 'auto', border: '1px solid #ddd' }}>
                     <h1 className="text-3xl strick-title font-bold py-5 px-12 text-center">অর্ডার করতে নিচের ফর্মটি পূরন করে <span className='dcf'>Submit Order</span> বাটনটি চাপুন</h1>
                     <div className="card-body">
                         <form onSubmit={handleSubmit(onSubmit)}>
