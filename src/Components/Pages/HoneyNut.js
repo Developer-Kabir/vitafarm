@@ -1,14 +1,34 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-
-
-
+import { toast, ToastContainer } from 'react-toastify'
 
 const HoneyNut = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const TodaysDate = new Date().toLocaleDateString();
+    console.log(TodaysDate);
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = data => {
 
-    console.log(watch("example")); // watch input value by passing the name of it
+        fetch('http://localhost:5000/order', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    toast(` আপনি সফল ভাবে অর্ডারটি করছেন, শীঘ্রই আমাদের প্রতিনিধি আপনাকে কল করে নিশ্চিত করবে`)
+                }
+                else {
+                    toast.error(`আপনার অর্ডার করতে সমস্যা হয়েছে দয়া করে ফর্মটি ভালো করে পূরণ করুন`)
+                }
+
+            })
+    };
+    console.log(errors);
+
+
 
 
     return (
@@ -61,7 +81,7 @@ const HoneyNut = () => {
 
 
                 <div className="card w-full bg-base-100 my-10" style={{ width: '90%', margin: 'auto', border: '1px solid #ddd' }}>
-                    <h1 className="text-3xl strick-title font-bold py-5 px-12 text-center">অর্ডার করতে নিচের ফর্মটি পূরন করে Submit Order বাটনটি চাপুন</h1>
+                    <h1 className="text-3xl strick-title font-bold py-5 px-12 text-center">অর্ডার করতে নিচের ফর্মটি পূরন করে <span className='dcf'>Submit Order</span> বাটনটি চাপুন</h1>
                     <div className="card-body">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="form-control">
@@ -80,6 +100,9 @@ const HoneyNut = () => {
                                 </label>
 
                             </div>
+                            <input type="hidden" value={TodaysDate}  {...register("date")}/>
+                            <input type="hidden" value="মধুময় বাদাম"  {...register("productName")}/>
+                            
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-bold">ঠিকানাঃ</span>
@@ -99,6 +122,7 @@ const HoneyNut = () => {
                         </form>
                     </div>
                 </div>
+                <ToastContainer></ToastContainer>
             </div>
 
         </div>
