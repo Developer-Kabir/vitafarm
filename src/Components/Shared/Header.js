@@ -7,6 +7,7 @@ const Header = () => {
         <li className='font-bold'><Link to='/honeyNut'>মধুময় বাদাম</Link></li>
         <li className='font-bold'><Link to='/greenCoffee'>গ্রীন কফি</Link></li>
         <li className='font-bold'><Link to='/chiaSeed'>চিয়া সীড</Link></li>
+        <li className='font-bold'><Link to='/moringa'>মরিঙ্গা</Link></li>
     </>
 
     return (

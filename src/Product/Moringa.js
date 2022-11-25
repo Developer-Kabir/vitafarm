@@ -2,10 +2,11 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast, ToastContainer } from 'react-toastify';
 
-const ChiaSeed = () => {
+const Moringa = () => {
 
-    const price = 999;
-    const pName = "Chia Seed";
+
+    const price = 1500;
+    const pName = "Moringa";
     const TodaysDate = new Date().toLocaleDateString();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -32,54 +33,53 @@ const ChiaSeed = () => {
 
 
 
-
     return (
         <div>
             <div className="flex flex-col w-full">
-                <div className="grid card p-title mt-5 rounded-box place-items-center"><h1 className='text-3xl text-center font-bold p-5'>চিয়া সীডকে বলা হয় পৃথিবীর ১ নাম্বার সুপারফুড!!!</h1></div>
+                <div className="grid card p-title mt-5 rounded-box place-items-center"><h1 className='text-3xl text-center font-bold p-5'>উপকারিতার দিক থেকে বিদেশি সুপারফুডকে টেক্কা দিচ্ছে মরিঙ্গা</h1></div>
                 <div className="grid card bg-base-300 mt-5 rounded-box place-items-center">
-                    <h1 className='text-3xl strick-title font-bold p-4'>পূর্ব মূল্য -- <s>১২০০ টাকা</s></h1>
-                    <h1 className='text-3xl pp font-bold p-1'>বর্তমান মূল্য -- ৯৯৯ টাকা</h1>
+                    <h1 className='text-3xl strick-title font-bold p-4'>পূর্ব মূল্য -- <s>২০০০ টাকা</s></h1>
+                    <h1 className='text-3xl pp font-bold p-1'>বর্তমান মূল্য -- ১৫০০ টাকা</h1>
                     <h1 className='text-3xl pp font-bold p-4'>সারাদেশে ডেলিভারি চার্জ ফ্রি</h1>
                 </div>
                 <div className="grid card p-title2 mt-5 rounded-box place-items-center"><h1 className='text-3xl font-bold p-5'>অর্ডার করতে নিচে চলে যান</h1></div>
                 <div className="hero min-h-screen bg-base-200">
                     <div className="hero-content flex-col lg:flex-row-reverse">
-                        <img src="https://i.ibb.co/9gdQ0ms/Chia-Seed-Product.jpg" alt='' className="max-w-md rounded-2xl shadow-2xl" />
-                        <img src="https://i.ibb.co/thyyNhf/Untitled-design-11.png" alt='' className="max-w-md rounded-2xl shadow-2xl" />
+                        <img src="https://i.ibb.co/B23m0V1/Untitled-design-13.png" alt='' className="max-w-md rounded-2xl shadow-2xl" />
+                        <img src="https://i.ibb.co/jWn6ghD/Untitled-design-12.png" alt='' className="max-w-md rounded-2xl shadow-2xl" />
 
                     </div>
                 </div>
             </div>
             <div className="flex flex-col w-full">
-                <div className="grid p-title card  rounded-box place-items-center"><h1 className="text-3xl font-bold p-5">চিয়া সীড কেন খাবেন ?</h1></div>
+                <div className="grid p-title card  rounded-box place-items-center"><h1 className="text-3xl font-bold p-5">মরিঙ্গা কেন খাবেন ?</h1></div>
                 <div className="divider"></div>
                 <div className="grid card bg-base-300 rounded-box px-12">
                     <li className='abc'>
-                        🍀 চিয়া সীড ভাল ঘুম হতে সাহায্য করে</li>
+                        🍀 পুষ্টির আধার বলে সুপরিচিত এই পাতার গুঁড়া দেহে শক্তির যোগান দেয়।</li>
                     <li className='abc'>
-                        🍀 চিয়া বীজ ক্যান্সার রোধ করে</li>
+                        🍀 রাতে ঘুমানোর আগে সজিনা পাতার গুঁড়া বেশ উপকারী। এটি ভালো ঘুমের জন্য সহায়ক।</li>
                     <li className='abc'>🍀
-                        চিয়া বীজ হাঁটু ও জয়েন্টের ব্যথা দূর করে</li>
-                    <li className='abc'>🍀 চিয়া সিড ত্বক, চুল ও নখ সুন্দর রাখে</li>
+                    এতে বিদ্যমান পুষ্টি উপাদানগুলো দেহের রোগ প্রতিরোধ ক্ষমতা বৃদ্ধি করে বহুলাংশে।</li>
+                    <li className='abc'>🍀 এটি অ্যান্টিঅক্সিডেন্ট এর চমৎকার উৎস। এতে বিদ্যমান অ্যান্টিঅক্সিডেন্ট গুণাবলি অকাল বার্ধক্য প্রতিরোধে ভূমিকা রাখে।</li>
                     <li className='abc'>
-                        🍀 ব্লাড সুগার লেভেল নরমাল রাখে</li>
+                        🍀  নারীদের ঋতুস্রাবকালীন সময়ে বেশ কার্যকরী ভূমিকা রাখে।</li>
                     <li className='abc'>
-                        🍀 স্বাস্থ্যের জন্য ইতিবাচক প্রভাব ফেলে</li>
+                        🍀 ওজন কমাতে এটি এক নতুন মাত্রা যোগ করে।</li>
                     <li className='abc'>
-                        🍀 ব্রণ প্রতিরোধ করে এবং দাঁতের ক্ষয় রোধ করে।</li>
+                        🍀 ডায়াবেটিস নিয়ন্ত্রণে এর ভূমিকা অপরিসীম।</li>
                     <li className='abc'>
-                        🍀 ওজন নিয়ন্ত্রন করে ও ওজন কমাতে সহায়তা করে।</li>
+                        🍀 ক্যান্সারের বিরুদ্ধে কার্যকরী ভূমিকা রাখে।</li>
                     <li className='abc'>
-                        🍀 এটেনশান ডেফিসিট হাইপার এক্টিভিটি ডিসর্ডার দূর করে</li>
+                        🍀 এসজিনা পাতার গুঁড়া উষ্ণ পানীয় হিসবে গ্রহণে সাইনাসের সমস্যার উপশম হয়।</li>
                     <li className='abc'>
-                        🍀 গ্যাস্ট্রিক এর সমস্যা দূর করে।</li>
+                        🍀 কোলেস্টেরলের মাত্রা নিয়ন্ত্রণে রাখতে দারুন কাজ করে এই সজিনা পাতার গুঁড়া।</li>
                 </div>
 
             </div>
             <div className="grid card bg-base-300 mt-5 rounded-box place-items-center">
-                <h1 className='text-3xl strick-title font-bold p-4'>পূর্ব মূল্য -- <s>১২০০ টাকা</s></h1>
-                <h1 className='text-3xl pp font-bold p-1'>বর্তমান মূল্য -- ৯৯৯ টাকা</h1>
+                <h1 className='text-3xl strick-title font-bold p-4'>পূর্ব মূল্য -- <s>২০০০ টাকা</s></h1>
+                <h1 className='text-3xl pp font-bold p-1'>বর্তমান মূল্য -- ১৫০০ টাকা</h1>
                 <h1 className='text-3xl pp font-bold p-4'>সারাদেশে ডেলিভারি চার্জ ফ্রি</h1>
             </div>
             <div className="flex my-10 flex-col w-full ">
@@ -136,7 +136,4 @@ const ChiaSeed = () => {
     );
 };
 
-export default ChiaSeed;
-
-
-
+export default Moringa;
