@@ -4,7 +4,7 @@ import { toast, ToastContainer } from 'react-toastify'
 
 const HoneyNut = () => {
     const price = 1100;
-    const pName = HoneyNut;
+    const pName = "HoneyNut";
     const TodaysDate = new Date().toLocaleDateString();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -102,8 +102,9 @@ const HoneyNut = () => {
 
                             </div>
                             <input type="hidden" value={TodaysDate}  {...register("date")}/>
-                            <input type="hidden" value={pName} {...register("productName")}/>
-                            <input type="hidden" value={price}  {...register("productName")}/>
+                            <input type="hidden" value={pName}  {...register("productName")}/>
+                            
+                            <input type="hidden" value={price}  {...register("price")}/>
                             
                             <div className="form-control">
                                 <label className="label">
