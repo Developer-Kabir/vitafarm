@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const Header = () => {
 
     const headermenu = <>
-        <li className='font-bold'><Link to='/nut'>মধুময় বাদাম</Link></li>
-        <li className='font-bold'><Link to='/coffee'>গ্রীন কফি</Link></li>
+        <li className='font-bold'><Link to='/honeyNut'>মধুময় বাদাম</Link></li>
+        <li className='font-bold'><Link to='/greenCoffee'>গ্রীন কফি</Link></li>
         <li className='font-bold'><Link to='/seed'>চিয়া সীড</Link></li>
     </>
 
