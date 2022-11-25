@@ -31,7 +31,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div class="navbar-end">
-                    <a class="btn">যোগাযোগ করুন</a>
+                    <Link to="/contact" class="btn">যোগাযোগ করুন</Link>
                 </div>
             </div>
         </div>

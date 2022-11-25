@@ -9,6 +9,7 @@ import Header from './Components/Shared/Header';
 import GreenCoffee from './Product/GreenCoffee';
 import ChiaSeed from './Product/ChiaSeed';
 import Moringa from './Product/Moringa';
+import Contact from './Components/Pages/Contact';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path='/greenCoffee' element={<GreenCoffee></GreenCoffee>}></Route>
         <Route path='/chiaSeed' element={<ChiaSeed></ChiaSeed>}></Route>
         <Route path='/moringa' element={<Moringa></Moringa>}></Route>
+        <Route path='/contact' element={<Contact></Contact>}></Route>
         <Route path='/dashboard' element={<Dashboard></Dashboard>}>
           <Route path='order' element={<Order></Order>}></Route>
         </Route>
