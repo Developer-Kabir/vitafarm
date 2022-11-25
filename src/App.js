@@ -7,6 +7,7 @@ import HoneyNut from './Product/HoneyNut';
 import Footer from './Components/Shared/Footer';
 import Header from './Components/Shared/Header';
 import GreenCoffee from './Product/GreenCoffee';
+import ChiaSeed from './Product/ChiaSeed';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/honeyNut' element={<HoneyNut></HoneyNut>}></Route>
         <Route path='/greenCoffee' element={<GreenCoffee></GreenCoffee>}></Route>
+        <Route path='/chiaSeed' element={<ChiaSeed></ChiaSeed>}></Route>
         <Route path='/dashboard' element={<Dashboard></Dashboard>}>
           <Route path='order' element={<Order></Order>}></Route>
         </Route>
