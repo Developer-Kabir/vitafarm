@@ -32,3 +32,12 @@
 .dcf{
   color: green;
 }
+
+.table :where(thead, tfoot) :where(th, td){
+  background-color: greenyellow !important;
+  height: 50px;
+}
+
+.table-compact :where(th, td) {
+  font-size: 18px;
+}

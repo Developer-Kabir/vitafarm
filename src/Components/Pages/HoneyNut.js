@@ -3,8 +3,9 @@ import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from 'react-toastify'
 
 const HoneyNut = () => {
+    const price = 1100;
+    const pName = HoneyNut;
     const TodaysDate = new Date().toLocaleDateString();
-    console.log(TodaysDate);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
 
@@ -101,7 +102,8 @@ const HoneyNut = () => {
 
                             </div>
                             <input type="hidden" value={TodaysDate}  {...register("date")}/>
-                            <input type="hidden" value="মধুময় বাদাম"  {...register("productName")}/>
+                            <input type="hidden" value={pName} {...register("productName")}/>
+                            <input type="hidden" value={price}  {...register("productName")}/>
                             
                             <div className="form-control">
                                 <label className="label">
