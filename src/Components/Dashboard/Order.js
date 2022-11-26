@@ -5,7 +5,7 @@ const Order = () => {
     const [orders, setOrders] = useState([]);
     
     useEffect(() => {
-        fetch('https://vitfarm-backend.vercel.app/orders')
+        fetch('https://vitafarm-server.onrender.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
@@ -13,8 +13,8 @@ const Order = () => {
 
     return (
         <div>
-            <div class="overflow-x-auto">
-                <table class="table table-compact w-full">
+            <div className="overflow-x-auto">
+                <table className="table table-compact w-full">
                     <thead className='table-title'>
                         <tr>
                             <th></th>

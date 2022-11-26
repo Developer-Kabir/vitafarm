@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast, ToastContainer } from 'react-toastify';
 
 const Moringa = () => {
 
-
+    const [confirmOrder, setconfirmOrder] = useState(false)
     const price = 1500;
     const pName = "Moringa";
     const TodaysDate = new Date().toLocaleDateString();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
 
-        fetch('https://vitfarm-backend.vercel.app/order', {
+        fetch('https://vitafarm-server.onrender.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -21,6 +21,7 @@ const Moringa = () => {
             .then(res => res.json())
             .then(data => {
                 if (data) {
+                    setconfirmOrder(true)
                     toast(` আপনি সফল ভাবে অর্ডারটি করছেন, শীঘ্রই আমাদের প্রতিনিধি আপনাকে কল করে নিশ্চিত করবে`)
                 }
                 else {
@@ -60,7 +61,7 @@ const Moringa = () => {
                     <li className='abc'>
                         🍀 রাতে ঘুমানোর আগে সজিনা পাতার গুঁড়া বেশ উপকারী। এটি ভালো ঘুমের জন্য সহায়ক।</li>
                     <li className='abc'>🍀
-                    এতে বিদ্যমান পুষ্টি উপাদানগুলো দেহের রোগ প্রতিরোধ ক্ষমতা বৃদ্ধি করে বহুলাংশে।</li>
+                        এতে বিদ্যমান পুষ্টি উপাদানগুলো দেহের রোগ প্রতিরোধ ক্ষমতা বৃদ্ধি করে বহুলাংশে।</li>
                     <li className='abc'>🍀 এটি অ্যান্টিঅক্সিডেন্ট এর চমৎকার উৎস। এতে বিদ্যমান অ্যান্টিঅক্সিডেন্ট গুণাবলি অকাল বার্ধক্য প্রতিরোধে ভূমিকা রাখে।</li>
                     <li className='abc'>
                         🍀  নারীদের ঋতুস্রাবকালীন সময়ে বেশ কার্যকরী ভূমিকা রাখে।</li>
@@ -88,45 +89,54 @@ const Moringa = () => {
                 <div className="card w-full bg-base-100 my-10" style={{ width: '90%', margin: 'auto', border: '1px solid #ddd' }}>
                     <h1 className="text-3xl strick-title font-bold py-5 px-12 text-center">অর্ডার করতে নিচের ফর্মটি পূরন করে <span className='dcf'>Submit Order</span> বাটনটি চাপুন</h1>
                     <div className="card-body">
-                        <form onSubmit={handleSubmit(onSubmit)}>
-                            <div className="form-control">
-                                <label className="label font-bold">
-                                    <span className="label-text">নামঃ</span>
-                                </label>
-                                <input type="text" placeholder="আপনার নাম লিখুন" className="input input-bordered" {...register("name")} />
-                            </div>
-                            <div className="form-control">
-                                <label className="label font-bold">
-                                    <span className="label-text">মোবাইল নাম্বারঃ</span>
-                                </label>
-                                <input type="text" placeholder="আপনার মোবাইল নাম্বার লিখুন" className="input input-bordered" {...register("phoneNumber", { required: true })} />
-                                <label className="label">
-                                    <span className="label-text-alt text-red-800"> {errors.phoneNumber && <span>নাম্বার অবশ্যই লিখতে হবে</span>}</span>
-                                </label>
 
-                            </div>
-                            <input type="hidden" value={TodaysDate}  {...register("date")} />
-                            <input type="hidden" value={pName}  {...register("productName")} />
+                        {
+                            (confirmOrder === false)
+                                ?
+                                <form onSubmit={handleSubmit(onSubmit)}>
+                                    <div className="form-control">
+                                        <label className="label font-bold">
+                                            <span className="label-text">নামঃ</span>
+                                        </label>
+                                        <input type="text" placeholder="আপনার নাম লিখুন" className="input input-bordered" {...register("name")} />
+                                    </div>
+                                    <div className="form-control">
+                                        <label className="label font-bold">
+                                            <span className="label-text">মোবাইল নাম্বারঃ</span>
+                                        </label>
+                                        <input type="text" placeholder="আপনার মোবাইল নাম্বার লিখুন" className="input input-bordered" {...register("phoneNumber", { required: true })} />
+                                        <label className="label">
+                                            <span className="label-text-alt text-red-800"> {errors.phoneNumber && <span>নাম্বার অবশ্যই লিখতে হবে</span>}</span>
+                                        </label>
 
-                            <input type="hidden" value={price}  {...register("price")} />
+                                    </div>
+                                    <input type="hidden" value={TodaysDate}  {...register("date")} />
+                                    <input type="hidden" value={pName}  {...register("productName")} />
 
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-bold">ঠিকানাঃ</span>
-                                </label>
-                                <textarea rows="" className="input input-bordered" cols="" placeholder="আপনার ঠিকানা লিখুন"
-                                    {...register("address", { required: true })}
-                                ></textarea>
-                                <label className="label">
-                                    <span className="label-text-alt text-red-800">{errors.address && <span>ঠিকানা অবশ্যই লিখতে হবে</span>}</span>
-                                </label>
+                                    <input type="hidden" value={price}  {...register("price")} />
 
-                            </div>
-                            <div className="form-control mt-6">
-                                <button type='submit' className="btn btn-primary text-2xl">Submit Order</button>
-                            </div>
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text font-bold">ঠিকানাঃ</span>
+                                        </label>
+                                        <textarea rows="" className="input input-bordered" cols="" placeholder="আপনার ঠিকানা লিখুন"
+                                            {...register("address", { required: true })}
+                                        ></textarea>
+                                        <label className="label">
+                                            <span className="label-text-alt text-red-800">{errors.address && <span>ঠিকানা অবশ্যই লিখতে হবে</span>}</span>
+                                        </label>
 
-                        </form>
+                                    </div>
+                                    <div className="form-control mt-6">
+                                        <button type='submit' className="btn btn-primary text-2xl">Submit Order</button>
+                                    </div>
+
+                                </form>
+                                : <div> <h1 className='text-2xl text-center'>আপনি সফল ভাবে অর্ডারটি করছেন, শীঘ্রই আমাদের প্রতিনিধি আপনাকে কল করে নিশ্চিত করবে</h1>
+                                    <h3 className='text-xl text-center'>Thank Your For Your Order</h3>
+                                 </div>
+                        }
+
                     </div>
                 </div>
                 <ToastContainer></ToastContainer>

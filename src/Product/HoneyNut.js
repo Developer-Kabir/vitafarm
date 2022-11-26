@@ -9,7 +9,7 @@ const HoneyNut = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
 
-        fetch('https://vitfarm-backend.vercel.app/order', {
+        fetch('https://vitafarm-server.onrender.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
