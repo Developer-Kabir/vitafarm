@@ -43,14 +43,15 @@ const Moringa = () => {
                     <h1 className='text-3xl pp font-bold p-1'>বর্তমান মূল্য -- ১৫০০ টাকা</h1>
                     <h1 className='text-3xl pp font-bold p-4'>সারাদেশে ডেলিভারি চার্জ ফ্রি</h1>
                 </div>
-                <div className="grid card p-title2 mt-5 rounded-box place-items-center"><h1 className='text-3xl font-bold p-5'>অর্ডার করতে নিচে চলে যান</h1></div>
-                <div className="hero min-h-screen bg-base-200">
-                    <div className="hero-content flex-col lg:flex-row-reverse">
-                        <img src="https://i.ibb.co/B23m0V1/Untitled-design-13.png" alt='' className="max-w-md rounded-2xl shadow-2xl" />
-                        <img src="https://i.ibb.co/jWn6ghD/Untitled-design-12.png" alt='' className="max-w-md rounded-2xl shadow-2xl" />
-
+                <div className="grid card p-title2 mt-5 rounded-box place-items-center"><h1 className='text-3xl font-bold p-5'><a href="#orderActive">অর্ডার করতে এখানে চাপুন এবং নিচের ফর্ম পূরন করুন</a></h1></div>
+                <div class="grid lg:grid-cols-2 grid-cols-1 my-5 gap-4">
+                    <div>
+                        <img src="https://i.ibb.co/mt5zLvs/Untitled-design-13.png" alt='' className="img-fluid rounded-2xl shadow-2xl" />
                     </div>
+
+                    <div> <img src="https://i.ibb.co/428mQBv/Untitled-design-12.png" alt='' className="img-fluid rounded-2xl shadow-2xl" /></div>
                 </div>
+
             </div>
             <div className="flex flex-col w-full">
                 <div className="grid p-title card  rounded-box place-items-center"><h1 className="text-3xl font-bold p-5">মরিঙ্গা কেন খাবেন ?</h1></div>
@@ -86,7 +87,7 @@ const Moringa = () => {
             <div className="flex my-10 flex-col w-full ">
 
 
-                <div className="card w-full bg-base-100 my-10" style={{ width: '90%', margin: 'auto', border: '1px solid #ddd' }}>
+                <div id='orderActive' className="card w-full bg-base-100 my-10" style={{ width: '90%', margin: 'auto', border: '1px solid #ddd' }}>
                     <h1 className="text-3xl strick-title font-bold py-5 px-12 text-center">অর্ডার করতে নিচের ফর্মটি পূরন করে <span className='dcf'>Submit Order</span> বাটনটি চাপুন</h1>
                     <div className="card-body">
 
@@ -134,7 +135,7 @@ const Moringa = () => {
                                 </form>
                                 : <div> <h1 className='text-2xl text-center'>আপনি সফল ভাবে অর্ডারটি করছেন, শীঘ্রই আমাদের প্রতিনিধি আপনাকে কল করে নিশ্চিত করবে</h1>
                                     <h3 className='text-xl text-center'>Thank Your For Your Order</h3>
-                                 </div>
+                                </div>
                         }
 
                     </div>

@@ -41,3 +41,12 @@
 .table-compact :where(th, td) {
   font-size: 18px;
 }
+
+.img-fluid{
+  max-width:100%;
+  height:auto
+}
+
+.img-box{
+  width: 50%;
+}
